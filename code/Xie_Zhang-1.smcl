@@ -1,0 +1,474 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}D:\学习资料\大学\3rd year\fall\ECO375\project\phase 2\Xie_Zhang.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}23 Nov 2022, 22:49:19
+
+{com}. use "D:\学习资料\大学\3rd year\fall\ECO375\project\phase 2\Xie_Zhang.dta",clear
+
+. scatter wage educ
+{res}
+{com}. 
+. sum wage educ
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}wage {c |}{res}        935    957.9455    404.3608        115       3078
+{txt}{space 8}educ {c |}{res}        935    13.46845    2.196654          9         18
+
+{com}. 
+. reg wage educ, robust
+
+{txt}Linear regression                               Number of obs     = {res}       935
+                                                {txt}F(1, 933)         =  {res}    95.65
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.1070
+                                                {txt}Root MSE          =    {res} 382.32
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}        wage{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2} 60.21428{col 26}{space 2} 6.156956{col 37}{space 1}    9.78{col 46}{space 3}0.000{col 54}{space 4}  48.1312{col 67}{space 3} 72.29737
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 146.9524{col 26}{space 2} 80.26953{col 37}{space 1}    1.83{col 46}{space 3}0.067{col 54}{space 4}-10.57731{col 67}{space 3} 304.4822
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. eststo r1
+
+. 
+. reg wage educ IQ KWW tenure1 age married black urban,robust
+
+{txt}Linear regression                               Number of obs     = {res}       731
+                                                {txt}F(8, 722)         =  {res}    31.15
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2397
+                                                {txt}Root MSE          =    {res} 354.76
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}        wage{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2} 44.79499{col 26}{space 2} 7.573609{col 37}{space 1}    5.91{col 46}{space 3}0.000{col 54}{space 4} 29.92606{col 67}{space 3} 59.66391
+{txt}{space 10}IQ {c |}{col 14}{res}{space 2} 2.789348{col 26}{space 2} 1.034153{col 37}{space 1}    2.70{col 46}{space 3}0.007{col 54}{space 4}  .759042{col 67}{space 3} 4.819654
+{txt}{space 9}KWW {c |}{col 14}{res}{space 2} 4.979643{col 26}{space 2} 2.298584{col 37}{space 1}    2.17{col 46}{space 3}0.031{col 54}{space 4} .4669356{col 67}{space 3}  9.49235
+{txt}{space 5}tenure1 {c |}{col 14}{res}{space 2} 10.31687{col 26}{space 2} 2.984422{col 37}{space 1}    3.46{col 46}{space 3}0.001{col 54}{space 4} 4.457689{col 67}{space 3} 16.17605
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 12.63866{col 26}{space 2} 4.525332{col 37}{space 1}    2.79{col 46}{space 3}0.005{col 54}{space 4} 3.754283{col 67}{space 3} 21.52304
+{txt}{space 5}married {c |}{col 14}{res}{space 2} 165.7806{col 26}{space 2} 36.73985{col 37}{space 1}    4.51{col 46}{space 3}0.000{col 54}{space 4} 93.65088{col 67}{space 3} 237.9103
+{txt}{space 7}black {c |}{col 14}{res}{space 2}-124.0157{col 26}{space 2} 35.05642{col 37}{space 1}   -3.54{col 46}{space 3}0.000{col 54}{space 4}-192.8404{col 67}{space 3}  -55.191
+{txt}{space 7}urban {c |}{col 14}{res}{space 2}  153.926{col 26}{space 2} 28.40339{col 37}{space 1}    5.42{col 46}{space 3}0.000{col 54}{space 4} 98.16289{col 67}{space 3} 209.6891
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-828.2665{col 26}{space 2} 179.8596{col 37}{space 1}   -4.61{col 46}{space 3}0.000{col 54}{space 4}-1181.377{col 67}{space 3}-475.1562
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. eststo r2
+
+. 
+. reg wage educ IQ KWW exper1 age married black urban,robust
+
+{txt}Linear regression                               Number of obs     = {res}       935
+                                                {txt}F(8, 926)         =  {res}    36.92
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2371
+                                                {txt}Root MSE          =    {res}  354.7
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}        wage{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2}  47.8606{col 26}{space 2} 7.208822{col 37}{space 1}    6.64{col 46}{space 3}0.000{col 54}{space 4} 33.71308{col 67}{space 3} 62.00812
+{txt}{space 10}IQ {c |}{col 14}{res}{space 2} 3.240172{col 26}{space 2} .9256603{col 37}{space 1}    3.50{col 46}{space 3}0.000{col 54}{space 4} 1.423537{col 67}{space 3} 5.056807
+{txt}{space 9}KWW {c |}{col 14}{res}{space 2} 5.009477{col 26}{space 2} 2.049404{col 37}{space 1}    2.44{col 46}{space 3}0.015{col 54}{space 4} .9874627{col 67}{space 3} 9.031491
+{txt}{space 6}exper1 {c |}{col 14}{res}{space 2} 11.20253{col 26}{space 2} 3.700565{col 37}{space 1}    3.03{col 46}{space 3}0.003{col 54}{space 4} 3.940064{col 67}{space 3}   18.465
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 6.738526{col 26}{space 2} 4.863409{col 37}{space 1}    1.39{col 46}{space 3}0.166{col 54}{space 4}-2.806056{col 67}{space 3} 16.28311
+{txt}{space 5}married {c |}{col 14}{res}{space 2} 168.1729{col 26}{space 2} 34.08671{col 37}{space 1}    4.93{col 46}{space 3}0.000{col 54}{space 4} 101.2767{col 67}{space 3} 235.0691
+{txt}{space 7}black {c |}{col 14}{res}{space 2}-123.0515{col 26}{space 2} 32.88714{col 37}{space 1}   -3.74{col 46}{space 3}0.000{col 54}{space 4}-187.5935{col 67}{space 3}-58.50957
+{txt}{space 7}urban {c |}{col 14}{res}{space 2} 165.2659{col 26}{space 2} 24.57242{col 37}{space 1}    6.73{col 46}{space 3}0.000{col 54}{space 4} 117.0418{col 67}{space 3}   213.49
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-799.3458{col 26}{space 2} 165.1722{col 37}{space 1}   -4.84{col 46}{space 3}0.000{col 54}{space 4}-1123.501{col 67}{space 3}-475.1906
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. eststo r3
+
+. 
+. reg wage educ IQ KWW tenure1 exper1 age hours married black urban,robust
+
+{txt}Linear regression                               Number of obs     = {res}       731
+                                                {txt}F(10, 720)        =  {res}    26.65
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2462
+                                                {txt}Root MSE          =    {res} 353.74
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}        wage{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2} 50.77325{col 26}{space 2} 8.556095{col 37}{space 1}    5.93{col 46}{space 3}0.000{col 54}{space 4} 33.97538{col 67}{space 3} 67.57113
+{txt}{space 10}IQ {c |}{col 14}{res}{space 2} 2.652494{col 26}{space 2} 1.021048{col 37}{space 1}    2.60{col 46}{space 3}0.010{col 54}{space 4}  .647908{col 67}{space 3} 4.657081
+{txt}{space 9}KWW {c |}{col 14}{res}{space 2}  5.16743{col 26}{space 2} 2.263752{col 37}{space 1}    2.28{col 46}{space 3}0.023{col 54}{space 4} .7230872{col 67}{space 3} 9.611773
+{txt}{space 5}tenure1 {c |}{col 14}{res}{space 2} 8.169512{col 26}{space 2} 3.466798{col 37}{space 1}    2.36{col 46}{space 3}0.019{col 54}{space 4} 1.363271{col 67}{space 3} 14.97575
+{txt}{space 6}exper1 {c |}{col 14}{res}{space 2} 6.893296{col 26}{space 2} 6.448949{col 37}{space 1}    1.07{col 46}{space 3}0.285{col 54}{space 4}-5.767695{col 67}{space 3} 19.55429
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 7.739303{col 26}{space 2} 6.554819{col 37}{space 1}    1.18{col 46}{space 3}0.238{col 54}{space 4}-5.129538{col 67}{space 3} 20.60814
+{txt}{space 7}hours {c |}{col 14}{res}{space 2}-3.585181{col 26}{space 2} 2.303518{col 37}{space 1}   -1.56{col 46}{space 3}0.120{col 54}{space 4}-8.107596{col 67}{space 3} .9372328
+{txt}{space 5}married {c |}{col 14}{res}{space 2} 165.4751{col 26}{space 2} 36.80899{col 37}{space 1}    4.50{col 46}{space 3}0.000{col 54}{space 4} 93.20931{col 67}{space 3} 237.7409
+{txt}{space 7}black {c |}{col 14}{res}{space 2} -135.167{col 26}{space 2} 35.08333{col 37}{space 1}   -3.85{col 46}{space 3}0.000{col 54}{space 4}-204.0448{col 67}{space 3}-66.28916
+{txt}{space 7}urban {c |}{col 14}{res}{space 2}  155.748{col 26}{space 2} 28.44314{col 37}{space 1}    5.48{col 46}{space 3}0.000{col 54}{space 4} 99.90657{col 67}{space 3} 211.5894
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-652.4385{col 26}{space 2} 200.5974{col 37}{space 1}   -3.25{col 46}{space 3}0.001{col 54}{space 4}-1046.264{col 67}{space 3}-258.6127
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. eststo r4
+
+. 
+. 
+. 
+. gen bla_educ=black*educ
+
+. 
+. reg wage educ IQ KWW tenure1 exper1 age hours married black urban bla_educ,robust
+
+{txt}Linear regression                               Number of obs     = {res}       731
+                                                {txt}F(11, 719)        =  {res}    24.62
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2509
+                                                {txt}Root MSE          =    {res} 352.87
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}        wage{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2} 54.57402{col 26}{space 2} 8.884584{col 37}{space 1}    6.14{col 46}{space 3}0.000{col 54}{space 4} 37.13119{col 67}{space 3} 72.01685
+{txt}{space 10}IQ {c |}{col 14}{res}{space 2} 2.598003{col 26}{space 2} 1.016395{col 37}{space 1}    2.56{col 46}{space 3}0.011{col 54}{space 4} .6025472{col 67}{space 3} 4.593459
+{txt}{space 9}KWW {c |}{col 14}{res}{space 2} 5.583424{col 26}{space 2} 2.273072{col 37}{space 1}    2.46{col 46}{space 3}0.014{col 54}{space 4} 1.120773{col 67}{space 3} 10.04607
+{txt}{space 5}tenure1 {c |}{col 14}{res}{space 2} 8.141468{col 26}{space 2} 3.457624{col 37}{space 1}    2.35{col 46}{space 3}0.019{col 54}{space 4} 1.353222{col 67}{space 3} 14.92971
+{txt}{space 6}exper1 {c |}{col 14}{res}{space 2} 6.784822{col 26}{space 2} 6.434972{col 37}{space 1}    1.05{col 46}{space 3}0.292{col 54}{space 4}-5.848758{col 67}{space 3}  19.4184
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 6.811674{col 26}{space 2} 6.546278{col 37}{space 1}    1.04{col 46}{space 3}0.298{col 54}{space 4} -6.04043{col 67}{space 3} 19.66378
+{txt}{space 7}hours {c |}{col 14}{res}{space 2}-3.353508{col 26}{space 2} 2.307469{col 37}{space 1}   -1.45{col 46}{space 3}0.147{col 54}{space 4}-7.883689{col 67}{space 3} 1.176673
+{txt}{space 5}married {c |}{col 14}{res}{space 2} 160.8193{col 26}{space 2} 36.59307{col 37}{space 1}    4.39{col 46}{space 3}0.000{col 54}{space 4} 88.97727{col 67}{space 3} 232.6613
+{txt}{space 7}black {c |}{col 14}{res}{space 2} 449.0837{col 26}{space 2} 206.0253{col 37}{space 1}    2.18{col 46}{space 3}0.030{col 54}{space 4} 44.60069{col 67}{space 3} 853.5667
+{txt}{space 7}urban {c |}{col 14}{res}{space 2} 154.7786{col 26}{space 2} 28.43651{col 37}{space 1}    5.44{col 46}{space 3}0.000{col 54}{space 4} 98.95007{col 67}{space 3} 210.6071
+{txt}{space 4}bla_educ {c |}{col 14}{res}{space 2}-47.10358{col 26}{space 2} 16.56524{col 37}{space 1}   -2.84{col 46}{space 3}0.005{col 54}{space 4}-79.62559{col 67}{space 3}-14.58157
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-686.0126{col 26}{space 2} 201.4522{col 37}{space 1}   -3.41{col 46}{space 3}0.001{col 54}{space 4}-1081.518{col 67}{space 3}-290.5077
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. eststo r5
+
+. 
+. 
+. 
+. gen br1=0 if !missing(brthord)
+{txt}(83 missing values generated)
+
+{com}. 
+. replace br1=1 if brthord==1
+{txt}(346 real changes made)
+
+{com}. 
+. gen br2=0 if !missing(brthord)
+{txt}(83 missing values generated)
+
+{com}. 
+. replace br2=1 if brthord==2
+{txt}(239 real changes made)
+
+{com}. 
+. gen br3=0 if !missing(brthord)
+{txt}(83 missing values generated)
+
+{com}. 
+. replace br3=1 if brthord==3
+{txt}(126 real changes made)
+
+{com}. 
+. gen br4=0 if !missing(brthord)
+{txt}(83 missing values generated)
+
+{com}. 
+. replace br4=1 if brthord==4
+{txt}(57 real changes made)
+
+{com}. 
+. gen br5_=0 if !missing(brthord)
+{txt}(83 missing values generated)
+
+{com}. 
+. replace br5_=1 if brthord>=5
+{txt}(167 real changes made)
+
+{com}. 
+. gen br1_ed=br1*educ
+{txt}(83 missing values generated)
+
+{com}. 
+. gen br2_ed=br2*educ
+{txt}(83 missing values generated)
+
+{com}. 
+. gen br3_ed=br3*educ
+{txt}(83 missing values generated)
+
+{com}. 
+. gen br4_ed=br4*educ
+{txt}(83 missing values generated)
+
+{com}. 
+. gen br5_ed=br5_*educ
+
+. 
+. 
+. 
+. reg wage educ IQ KWW tenure1 exper1 age hours married black urban br2 br3 br4 br5_, robust
+
+{txt}Linear regression                               Number of obs     = {res}       658
+                                                {txt}F(14, 643)        =  {res}    17.96
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2500
+                                                {txt}Root MSE          =    {res} 354.94
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}        wage{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2} 47.82372{col 26}{space 2} 8.995437{col 37}{space 1}    5.32{col 46}{space 3}0.000{col 54}{space 4} 30.15974{col 67}{space 3} 65.48771
+{txt}{space 10}IQ {c |}{col 14}{res}{space 2}   2.5158{col 26}{space 2} 1.042437{col 37}{space 1}    2.41{col 46}{space 3}0.016{col 54}{space 4} .4688071{col 67}{space 3} 4.562792
+{txt}{space 9}KWW {c |}{col 14}{res}{space 2} 4.526036{col 26}{space 2} 2.446612{col 37}{space 1}    1.85{col 46}{space 3}0.065{col 54}{space 4}-.2782791{col 67}{space 3} 9.330352
+{txt}{space 5}tenure1 {c |}{col 14}{res}{space 2} 8.537897{col 26}{space 2} 3.597394{col 37}{space 1}    2.37{col 46}{space 3}0.018{col 54}{space 4} 1.473838{col 67}{space 3} 15.60196
+{txt}{space 6}exper1 {c |}{col 14}{res}{space 2} 3.427217{col 26}{space 2} 7.006665{col 37}{space 1}    0.49{col 46}{space 3}0.625{col 54}{space 4}-10.33149{col 67}{space 3} 17.18593
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 10.04906{col 26}{space 2} 6.929727{col 37}{space 1}    1.45{col 46}{space 3}0.148{col 54}{space 4}-3.558573{col 67}{space 3} 23.65668
+{txt}{space 7}hours {c |}{col 14}{res}{space 2}-3.446243{col 26}{space 2} 2.631338{col 37}{space 1}   -1.31{col 46}{space 3}0.191{col 54}{space 4}-8.613297{col 67}{space 3} 1.720811
+{txt}{space 5}married {c |}{col 14}{res}{space 2} 164.7673{col 26}{space 2} 43.61986{col 37}{space 1}    3.78{col 46}{space 3}0.000{col 54}{space 4} 79.11272{col 67}{space 3} 250.4219
+{txt}{space 7}black {c |}{col 14}{res}{space 2}-157.6485{col 26}{space 2}  38.2372{col 37}{space 1}   -4.12{col 46}{space 3}0.000{col 54}{space 4}-232.7333{col 67}{space 3}-82.56361
+{txt}{space 7}urban {c |}{col 14}{res}{space 2} 178.9098{col 26}{space 2} 30.26442{col 37}{space 1}    5.91{col 46}{space 3}0.000{col 54}{space 4} 119.4808{col 67}{space 3} 238.3389
+{txt}{space 9}br2 {c |}{col 14}{res}{space 2}-39.41256{col 26}{space 2} 34.56756{col 37}{space 1}   -1.14{col 46}{space 3}0.255{col 54}{space 4}-107.2915{col 67}{space 3} 28.46639
+{txt}{space 9}br3 {c |}{col 14}{res}{space 2} 12.05288{col 26}{space 2} 42.91854{col 37}{space 1}    0.28{col 46}{space 3}0.779{col 54}{space 4}-72.22456{col 67}{space 3} 96.33031
+{txt}{space 9}br4 {c |}{col 14}{res}{space 2}-83.22103{col 26}{space 2} 43.67064{col 37}{space 1}   -1.91{col 46}{space 3}0.057{col 54}{space 4}-168.9753{col 67}{space 3}  2.53327
+{txt}{space 8}br5_ {c |}{col 14}{res}{space 2}-68.48157{col 26}{space 2} 46.21275{col 37}{space 1}   -1.48{col 46}{space 3}0.139{col 54}{space 4}-159.2277{col 67}{space 3} 22.26455
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-608.3704{col 26}{space 2} 215.5035{col 37}{space 1}   -2.82{col 46}{space 3}0.005{col 54}{space 4}-1031.546{col 67}{space 3}-185.1947
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. eststo r7
+
+. 
+. reg wage educ IQ KWW tenure1 exper1 age hours married black urban br2 br3 br4 br5_ br2_ed br3_ed br4_ed br5_ed,robust
+
+{txt}Linear regression                               Number of obs     = {res}       658
+                                                {txt}F(18, 639)        =  {res}    14.25
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2573
+                                                {txt}Root MSE          =    {res}  354.3
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}        wage{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2} 65.82661{col 26}{space 2} 12.77426{col 37}{space 1}    5.15{col 46}{space 3}0.000{col 54}{space 4} 40.74201{col 67}{space 3}  90.9112
+{txt}{space 10}IQ {c |}{col 14}{res}{space 2} 2.476835{col 26}{space 2} 1.043502{col 37}{space 1}    2.37{col 46}{space 3}0.018{col 54}{space 4} .4277279{col 67}{space 3} 4.525942
+{txt}{space 9}KWW {c |}{col 14}{res}{space 2} 4.708931{col 26}{space 2} 2.436173{col 37}{space 1}    1.93{col 46}{space 3}0.054{col 54}{space 4}-.0749422{col 67}{space 3} 9.492804
+{txt}{space 5}tenure1 {c |}{col 14}{res}{space 2}  8.90852{col 26}{space 2}  3.56928{col 37}{space 1}    2.50{col 46}{space 3}0.013{col 54}{space 4} 1.899584{col 67}{space 3} 15.91746
+{txt}{space 6}exper1 {c |}{col 14}{res}{space 2} 4.469652{col 26}{space 2} 7.019613{col 37}{space 1}    0.64{col 46}{space 3}0.525{col 54}{space 4}-9.314646{col 67}{space 3} 18.25395
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 9.393111{col 26}{space 2}  7.07961{col 37}{space 1}    1.33{col 46}{space 3}0.185{col 54}{space 4}-4.509001{col 67}{space 3} 23.29522
+{txt}{space 7}hours {c |}{col 14}{res}{space 2}-3.232868{col 26}{space 2} 2.639989{col 37}{space 1}   -1.22{col 46}{space 3}0.221{col 54}{space 4}-8.416971{col 67}{space 3} 1.951234
+{txt}{space 5}married {c |}{col 14}{res}{space 2} 159.7224{col 26}{space 2} 43.50672{col 37}{space 1}    3.67{col 46}{space 3}0.000{col 54}{space 4} 74.28894{col 67}{space 3} 245.1558
+{txt}{space 7}black {c |}{col 14}{res}{space 2}-157.4287{col 26}{space 2} 38.06602{col 37}{space 1}   -4.14{col 46}{space 3}0.000{col 54}{space 4}-232.1783{col 67}{space 3}-82.67906
+{txt}{space 7}urban {c |}{col 14}{res}{space 2} 178.9115{col 26}{space 2} 30.20776{col 37}{space 1}    5.92{col 46}{space 3}0.000{col 54}{space 4}  119.593{col 67}{space 3}   238.23
+{txt}{space 9}br2 {c |}{col 14}{res}{space 2} 337.2129{col 26}{space 2} 207.7902{col 37}{space 1}    1.62{col 46}{space 3}0.105{col 54}{space 4}-70.82117{col 67}{space 3}  745.247
+{txt}{space 9}br3 {c |}{col 14}{res}{space 2} 367.9219{col 26}{space 2} 263.6761{col 37}{space 1}    1.40{col 46}{space 3}0.163{col 54}{space 4}-149.8545{col 67}{space 3} 885.6982
+{txt}{space 9}br4 {c |}{col 14}{res}{space 2} 653.4682{col 26}{space 2} 250.0146{col 37}{space 1}    2.61{col 46}{space 3}0.009{col 54}{space 4} 162.5186{col 67}{space 3} 1144.418
+{txt}{space 8}br5_ {c |}{col 14}{res}{space 2} 351.1706{col 26}{space 2}  374.707{col 37}{space 1}    0.94{col 46}{space 3}0.349{col 54}{space 4}-384.6353{col 67}{space 3} 1086.977
+{txt}{space 6}br2_ed {c |}{col 14}{res}{space 2}-27.86083{col 26}{space 2} 15.85376{col 37}{space 1}   -1.76{col 46}{space 3}0.079{col 54}{space 4}-58.99261{col 67}{space 3} 3.270937
+{txt}{space 6}br3_ed {c |}{col 14}{res}{space 2}-26.42836{col 26}{space 2} 20.05138{col 37}{space 1}   -1.32{col 46}{space 3}0.188{col 54}{space 4}-65.80292{col 67}{space 3}  12.9462
+{txt}{space 6}br4_ed {c |}{col 14}{res}{space 2}-55.24447{col 26}{space 2} 18.64765{col 37}{space 1}   -2.96{col 46}{space 3}0.003{col 54}{space 4}-91.86255{col 67}{space 3}-18.62639
+{txt}{space 6}br5_ed {c |}{col 14}{res}{space 2}-32.49484{col 26}{space 2} 32.08193{col 37}{space 1}   -1.01{col 46}{space 3}0.312{col 54}{space 4}-95.49359{col 67}{space 3} 30.50392
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-855.3344{col 26}{space 2} 250.9756{col 37}{space 1}   -3.41{col 46}{space 3}0.001{col 54}{space 4}-1348.171{col 67}{space 3}-362.4977
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. eststo r8
+
+. 
+. 
+. 
+. esttab r1 r2 r3 r4
+{res}
+{txt}{hline 76}
+{txt}                      (1)             (2)             (3)             (4)   
+{txt}                     wage            wage            wage            wage   
+{txt}{hline 76}
+{txt}educ        {res}        60.21***        44.79***        47.86***        50.77***{txt}
+            {res} {ralign 12:{txt:(}9.78{txt:)}}    {ralign 12:{txt:(}5.91{txt:)}}    {ralign 12:{txt:(}6.64{txt:)}}    {ralign 12:{txt:(}5.93{txt:)}}   {txt}
+
+{txt}IQ          {res}                        2.789**         3.240***        2.652** {txt}
+            {res}                 {ralign 12:{txt:(}2.70{txt:)}}    {ralign 12:{txt:(}3.50{txt:)}}    {ralign 12:{txt:(}2.60{txt:)}}   {txt}
+
+{txt}KWW         {res}                        4.980*          5.009*          5.167*  {txt}
+            {res}                 {ralign 12:{txt:(}2.17{txt:)}}    {ralign 12:{txt:(}2.44{txt:)}}    {ralign 12:{txt:(}2.28{txt:)}}   {txt}
+
+{txt}tenure1     {res}                        10.32***                        8.170*  {txt}
+            {res}                 {ralign 12:{txt:(}3.46{txt:)}}                    {ralign 12:{txt:(}2.36{txt:)}}   {txt}
+
+{txt}age         {res}                        12.64**         6.739           7.739   {txt}
+            {res}                 {ralign 12:{txt:(}2.79{txt:)}}    {ralign 12:{txt:(}1.39{txt:)}}    {ralign 12:{txt:(}1.18{txt:)}}   {txt}
+
+{txt}married     {res}                        165.8***        168.2***        165.5***{txt}
+            {res}                 {ralign 12:{txt:(}4.51{txt:)}}    {ralign 12:{txt:(}4.93{txt:)}}    {ralign 12:{txt:(}4.50{txt:)}}   {txt}
+
+{txt}black       {res}                       -124.0***       -123.1***       -135.2***{txt}
+            {res}                 {ralign 12:{txt:(}-3.54{txt:)}}    {ralign 12:{txt:(}-3.74{txt:)}}    {ralign 12:{txt:(}-3.85{txt:)}}   {txt}
+
+{txt}urban       {res}                        153.9***        165.3***        155.7***{txt}
+            {res}                 {ralign 12:{txt:(}5.42{txt:)}}    {ralign 12:{txt:(}6.73{txt:)}}    {ralign 12:{txt:(}5.48{txt:)}}   {txt}
+
+{txt}exper1      {res}                                        11.20**         6.893   {txt}
+            {res}                                 {ralign 12:{txt:(}3.03{txt:)}}    {ralign 12:{txt:(}1.07{txt:)}}   {txt}
+
+{txt}hours       {res}                                                       -3.585   {txt}
+            {res}                                                 {ralign 12:{txt:(}-1.56{txt:)}}   {txt}
+
+{txt}_cons       {res}        147.0          -828.3***       -799.3***       -652.4** {txt}
+            {res} {ralign 12:{txt:(}1.83{txt:)}}    {ralign 12:{txt:(}-4.61{txt:)}}    {ralign 12:{txt:(}-4.84{txt:)}}    {ralign 12:{txt:(}-3.25{txt:)}}   {txt}
+{txt}{hline 76}
+{txt}N           {res}          935             731             935             731   {txt}
+{txt}{hline 76}
+{txt}t statistics in parentheses
+{txt}* p<0.05, ** p<0.01, *** p<0.001
+
+{com}. 
+. esttab r1 r4 r5
+{res}
+{txt}{hline 60}
+{txt}                      (1)             (2)             (3)   
+{txt}                     wage            wage            wage   
+{txt}{hline 60}
+{txt}educ        {res}        60.21***        50.77***        54.57***{txt}
+            {res} {ralign 12:{txt:(}9.78{txt:)}}    {ralign 12:{txt:(}5.93{txt:)}}    {ralign 12:{txt:(}6.14{txt:)}}   {txt}
+
+{txt}IQ          {res}                        2.652**         2.598*  {txt}
+            {res}                 {ralign 12:{txt:(}2.60{txt:)}}    {ralign 12:{txt:(}2.56{txt:)}}   {txt}
+
+{txt}KWW         {res}                        5.167*          5.583*  {txt}
+            {res}                 {ralign 12:{txt:(}2.28{txt:)}}    {ralign 12:{txt:(}2.46{txt:)}}   {txt}
+
+{txt}tenure1     {res}                        8.170*          8.141*  {txt}
+            {res}                 {ralign 12:{txt:(}2.36{txt:)}}    {ralign 12:{txt:(}2.35{txt:)}}   {txt}
+
+{txt}exper1      {res}                        6.893           6.785   {txt}
+            {res}                 {ralign 12:{txt:(}1.07{txt:)}}    {ralign 12:{txt:(}1.05{txt:)}}   {txt}
+
+{txt}age         {res}                        7.739           6.812   {txt}
+            {res}                 {ralign 12:{txt:(}1.18{txt:)}}    {ralign 12:{txt:(}1.04{txt:)}}   {txt}
+
+{txt}hours       {res}                       -3.585          -3.354   {txt}
+            {res}                 {ralign 12:{txt:(}-1.56{txt:)}}    {ralign 12:{txt:(}-1.45{txt:)}}   {txt}
+
+{txt}married     {res}                        165.5***        160.8***{txt}
+            {res}                 {ralign 12:{txt:(}4.50{txt:)}}    {ralign 12:{txt:(}4.39{txt:)}}   {txt}
+
+{txt}black       {res}                       -135.2***        449.1*  {txt}
+            {res}                 {ralign 12:{txt:(}-3.85{txt:)}}    {ralign 12:{txt:(}2.18{txt:)}}   {txt}
+
+{txt}urban       {res}                        155.7***        154.8***{txt}
+            {res}                 {ralign 12:{txt:(}5.48{txt:)}}    {ralign 12:{txt:(}5.44{txt:)}}   {txt}
+
+{txt}bla_educ    {res}                                       -47.10** {txt}
+            {res}                                 {ralign 12:{txt:(}-2.84{txt:)}}   {txt}
+
+{txt}_cons       {res}        147.0          -652.4**        -686.0***{txt}
+            {res} {ralign 12:{txt:(}1.83{txt:)}}    {ralign 12:{txt:(}-3.25{txt:)}}    {ralign 12:{txt:(}-3.41{txt:)}}   {txt}
+{txt}{hline 60}
+{txt}N           {res}          935             731             731   {txt}
+{txt}{hline 60}
+{txt}t statistics in parentheses
+{txt}* p<0.05, ** p<0.01, *** p<0.001
+
+{com}. 
+. esttab r1 r4 r8
+{res}
+{txt}{hline 60}
+{txt}                      (1)             (2)             (3)   
+{txt}                     wage            wage            wage   
+{txt}{hline 60}
+{txt}educ        {res}        60.21***        50.77***        65.83***{txt}
+            {res} {ralign 12:{txt:(}9.78{txt:)}}    {ralign 12:{txt:(}5.93{txt:)}}    {ralign 12:{txt:(}5.15{txt:)}}   {txt}
+
+{txt}IQ          {res}                        2.652**         2.477*  {txt}
+            {res}                 {ralign 12:{txt:(}2.60{txt:)}}    {ralign 12:{txt:(}2.37{txt:)}}   {txt}
+
+{txt}KWW         {res}                        5.167*          4.709   {txt}
+            {res}                 {ralign 12:{txt:(}2.28{txt:)}}    {ralign 12:{txt:(}1.93{txt:)}}   {txt}
+
+{txt}tenure1     {res}                        8.170*          8.909*  {txt}
+            {res}                 {ralign 12:{txt:(}2.36{txt:)}}    {ralign 12:{txt:(}2.50{txt:)}}   {txt}
+
+{txt}exper1      {res}                        6.893           4.470   {txt}
+            {res}                 {ralign 12:{txt:(}1.07{txt:)}}    {ralign 12:{txt:(}0.64{txt:)}}   {txt}
+
+{txt}age         {res}                        7.739           9.393   {txt}
+            {res}                 {ralign 12:{txt:(}1.18{txt:)}}    {ralign 12:{txt:(}1.33{txt:)}}   {txt}
+
+{txt}hours       {res}                       -3.585          -3.233   {txt}
+            {res}                 {ralign 12:{txt:(}-1.56{txt:)}}    {ralign 12:{txt:(}-1.22{txt:)}}   {txt}
+
+{txt}married     {res}                        165.5***        159.7***{txt}
+            {res}                 {ralign 12:{txt:(}4.50{txt:)}}    {ralign 12:{txt:(}3.67{txt:)}}   {txt}
+
+{txt}black       {res}                       -135.2***       -157.4***{txt}
+            {res}                 {ralign 12:{txt:(}-3.85{txt:)}}    {ralign 12:{txt:(}-4.14{txt:)}}   {txt}
+
+{txt}urban       {res}                        155.7***        178.9***{txt}
+            {res}                 {ralign 12:{txt:(}5.48{txt:)}}    {ralign 12:{txt:(}5.92{txt:)}}   {txt}
+
+{txt}br2         {res}                                        337.2   {txt}
+            {res}                                 {ralign 12:{txt:(}1.62{txt:)}}   {txt}
+
+{txt}br3         {res}                                        367.9   {txt}
+            {res}                                 {ralign 12:{txt:(}1.40{txt:)}}   {txt}
+
+{txt}br4         {res}                                        653.5** {txt}
+            {res}                                 {ralign 12:{txt:(}2.61{txt:)}}   {txt}
+
+{txt}br5_        {res}                                        351.2   {txt}
+            {res}                                 {ralign 12:{txt:(}0.94{txt:)}}   {txt}
+
+{txt}br2_ed      {res}                                       -27.86   {txt}
+            {res}                                 {ralign 12:{txt:(}-1.76{txt:)}}   {txt}
+
+{txt}br3_ed      {res}                                       -26.43   {txt}
+            {res}                                 {ralign 12:{txt:(}-1.32{txt:)}}   {txt}
+
+{txt}br4_ed      {res}                                       -55.24** {txt}
+            {res}                                 {ralign 12:{txt:(}-2.96{txt:)}}   {txt}
+
+{txt}br5_ed      {res}                                       -32.49   {txt}
+            {res}                                 {ralign 12:{txt:(}-1.01{txt:)}}   {txt}
+
+{txt}_cons       {res}        147.0          -652.4**        -855.3***{txt}
+            {res} {ralign 12:{txt:(}1.83{txt:)}}    {ralign 12:{txt:(}-3.25{txt:)}}    {ralign 12:{txt:(}-3.41{txt:)}}   {txt}
+{txt}{hline 60}
+{txt}N           {res}          935             731             658   {txt}
+{txt}{hline 60}
+{txt}t statistics in parentheses
+{txt}* p<0.05, ** p<0.01, *** p<0.001
+
+{com}. 
+. esttab r1 r2 r3 r4 using table1.doc, ar2 label
+{res}{txt}(output written to {browse  `"table1.doc"'})
+
+{com}. 
+. esttab r1 r4 r5 using table2.doc, ar2 label
+{res}{txt}(output written to {browse  `"table2.doc"'})
+
+{com}. 
+. esttab r1 r4 r8 using table3.doc, ar2 label
+{res}{txt}(output written to {browse  `"table3.doc"'})
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}D:\学习资料\大学\3rd year\fall\ECO375\project\phase 2\Xie_Zhang.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}23 Nov 2022, 23:08:25
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
